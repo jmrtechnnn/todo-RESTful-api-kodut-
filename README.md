@@ -79,3 +79,6 @@ Rakendus töötab ainult internetiühendusega
 Andmed salvestatakse välises API-s
 Disaini lülitamise funktsioon on puhtalt visuaalne - andmed jäävad samaks
 Browseris JavaScript peab olema lubatud
+
+
+NB! Juhendi kirjutamisel kasutasin Claude AI abi, sest no ta lihtsalt oskab neid asju paremaid. Pole jõhker entusiast aga neid ta teeb hästi.
