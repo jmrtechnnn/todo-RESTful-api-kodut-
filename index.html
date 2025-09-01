@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KODUTÖÖ</title>
+  <style id="appStyles">
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; }
+    h1 { margin-bottom: 10px; }
+    .box { border: 1px solid #ccc; padding: 12px; border-radius: 8px; margin: 10px 0; }
+    label { display: block; margin: 6px 0; }
+    input, textarea, button { padding: 8px; }
+    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .task { border: 1px solid #eee; padding: 8px; border-radius: 6px; margin: 6px 0; }
+    .task.done .title { text-decoration: line-through; color: #666; }
+    .small { color: #666; font-size: 12px; }
+    #app { display: none; }
+    .hidden { display: none; }
+    
+    .style-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .toggle-btn {
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="style-toggle">
+    <button class="toggle-btn" id="styleToggle">Style App with LLM</button>
+  </div>
+
+  <h1>KODUTÖÖ</h1>
+  <div id="serverInfo" class="small">REST API AADRESS on SEEE https://demo2.z-bit.ee</div>
+
+  <div id="auth" class="box">
+    <h2>Register</h2>
+    <label>Username <input id="regUser" type="text" maxlength="64"></label>
+    <label>First name <input id="regFirst" type="text"></label>
+    <label>Last name <input id="regLast" type="text"></label>
+    <label>Password <input id="regPass" type="password"></label>
+    <button id="btnReg">Create account</button>
+
+    <hr>
+
+    <h2>Log in</h2>
+    <label>Username <input id="loginUser" type="text"></label>
+    <label>Password <input id="loginPass" type="password"></label>
+    <button id="btnLogin">Log in</button>
+    <div id="authMsg" class="small"></div>
+  </div>
+
+  <div id="app" class="box">
+    <div class="row">
+      <div id="who" class="small"></div>
+      <button id="btnLogout">Log out</button>
+      <button id="btnReload">Reload tasks</button>
+    </div>
+
+    <h2>Add task</h2>
+    <label>Title (required) <input id="newTitle" type="text" maxlength="255"></label>
+    <label>Description <textarea id="newDesc" rows="2"></textarea></label>
+    <button id="btnAdd">Add</button>
+
+    <h2>Your tasks</h2>
+    <div class="row">
+      <button id="fAll">All</button>
+      <button id="fActive">Active</button>
+      <button id="fDone">Done</button>
+    </div>
+    <div id="tasks"></div>
+    <div id="empty" class="small hidden">No tasks yet</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
